@@ -1,6 +1,6 @@
 [project]
 name = "directory-overlay-mount"
-version = "0.1.1"
+version = "0.1.2"
 description = "Overlays two directories into a single read-only view, showing upper-layer files over lower ones."
 requires-python = ">=3.10"
 dependencies = []
