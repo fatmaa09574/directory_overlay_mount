@@ -36,3 +36,10 @@ The trade-off: it is purely logical. It resolves and lists paths; it does not op
 - Trailing slashes and double slashes in paths are rejected (resolve returns `None`, listdir returns `[]`). Use clean relative paths.
 - `..` components are rejected to prevent escaping the merged root.
 - Directory listings are sorted by name for determinism.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
